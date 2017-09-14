@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace ParserLib.siteBank
 {
-    class BankParser : IParser<string[]>
+    public class BankParser : IParser<string[]>
     {
         public string[] Parse(IHtmlDocument document)
         {

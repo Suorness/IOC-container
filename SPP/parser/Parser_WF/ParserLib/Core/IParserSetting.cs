@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ParserLib.Core
 {
-    interface IParserSetting
+     public interface IParserSetting
     {
         string BaseUrl { get; set; }
     }

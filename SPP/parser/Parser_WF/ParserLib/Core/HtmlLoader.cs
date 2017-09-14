@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ParserLib.Core
 {
-    class HtmlLoader
+    public class HtmlLoader
     {
         HttpClient client;
         string url;

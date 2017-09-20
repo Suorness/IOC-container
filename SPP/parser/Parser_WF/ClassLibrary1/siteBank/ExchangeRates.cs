@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ParserLib.siteBank
 {
+   // [Serializable]
    public class ExchangeRates
     {
         public string CurrencyName { get; set; }
@@ -14,7 +15,10 @@ namespace ParserLib.siteBank
             CurrencyName = name;
             CurrencyValue = value;
         }
+        public ExchangeRates()
+        {
 
+        }
         public override string ToString()
         {
             return string.Format("{0} = {1}", CurrencyName.Trim(), CurrencyValue.Trim());

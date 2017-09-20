@@ -38,7 +38,6 @@ namespace Parser_WF
         private void Parser_OnComplite(object obj)
         {
             //MessageBox.Show("Done");
-            Thread t;
         }
 
         private void ButtonStart_Click(object sender, EventArgs e)

@@ -22,7 +22,7 @@ namespace ParserLib.siteBank
             var aValues = values.ToArray();
             for (int i=0; i < count; i++)
             {
-                list.Add(new ExchangeRates(aValues[i].TextContent, aNames[i].TextContent));
+                list.Add(new ExchangeRates(aValues[i].TextContent.Trim(), aNames[i].TextContent.Trim()));
             }
             return list.ToArray();
         }

@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ParserLib.Core
 {
@@ -68,7 +69,6 @@ namespace ParserLib.Core
             var parserA = new HtmlParser();
             var document = await parserA.ParseAsync(source);
 
-            Thread myThread;// = new Thread(new ThreadStart(Count));
             var result= parser.Parse(document);
 
             OnNewData?.Invoke(this, result);

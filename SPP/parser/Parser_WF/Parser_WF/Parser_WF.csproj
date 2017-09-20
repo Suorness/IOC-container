@@ -103,8 +103,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ParserLib\ParserLib.csproj">
-      <Project>{8899332c-c925-4474-bfeb-dbb91f5896d9}</Project>
+    <ProjectReference Include="..\ClassLibrary1\ParserLib.csproj">
+      <Project>{77912e32-0d88-46a4-b335-7965f8dfd933}</Project>
       <Name>ParserLib</Name>
     </ProjectReference>
   </ItemGroup>

@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ListData = new System.Windows.Forms.ListBox();
             this.ButtonStart = new System.Windows.Forms.Button();
             this.ButtonAbort = new System.Windows.Forms.Button();
+            this.LabelLastUpdata = new System.Windows.Forms.Label();
+            this.TimerUpdata = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // ListData
@@ -61,17 +64,34 @@
             this.ButtonAbort.UseVisualStyleBackColor = true;
             this.ButtonAbort.Click += new System.EventHandler(this.ButtonAbort_Click);
             // 
+            // LabelLastUpdata
+            // 
+            this.LabelLastUpdata.AutoSize = true;
+            this.LabelLastUpdata.Location = new System.Drawing.Point(12, 228);
+            this.LabelLastUpdata.Name = "LabelLastUpdata";
+            this.LabelLastUpdata.Size = new System.Drawing.Size(63, 13);
+            this.LabelLastUpdata.TabIndex = 3;
+            this.LabelLastUpdata.Text = "Last update";
+            // 
+            // TimerUpdata
+            // 
+            this.TimerUpdata.Enabled = true;
+            this.TimerUpdata.Interval = 10000;
+            this.TimerUpdata.Tick += new System.EventHandler(this.TimerUpdata_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 261);
+            this.Controls.Add(this.LabelLastUpdata);
             this.Controls.Add(this.ButtonAbort);
             this.Controls.Add(this.ButtonStart);
             this.Controls.Add(this.ListData);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -80,6 +100,8 @@
         private System.Windows.Forms.ListBox ListData;
         private System.Windows.Forms.Button ButtonStart;
         private System.Windows.Forms.Button ButtonAbort;
+        private System.Windows.Forms.Label LabelLastUpdata;
+        private System.Windows.Forms.Timer TimerUpdata;
     }
 }
 

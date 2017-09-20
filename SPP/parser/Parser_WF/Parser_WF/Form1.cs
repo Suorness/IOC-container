@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ParserLib.Core;
+using ParserLib;
 using ParserLib.siteBank;
 using System.Web;
+using System.Threading;
+using ParserLib.Core;
 
 namespace Parser_WF
 {
     public partial class Form1 : Form
     {
         ParserWorker<ExchangeRates[]> parser;
-        
         public Form1()
         {
             InitializeComponent();
@@ -28,23 +29,35 @@ namespace Parser_WF
 
         private void Parser_OnNewData(object arg1, ExchangeRates[] arg2)
         {
+            ListData.Items.Clear();
             ListData.Items.AddRange(arg2);
+            LabelLastUpdata.Text=string.Format("Last updata: {0}", DateTime.Now);
+
         }
 
         private void Parser_OnComplite(object obj)
         {
-            MessageBox.Show("Done");
+            //MessageBox.Show("Done");
+            Thread t;
         }
 
         private void ButtonStart_Click(object sender, EventArgs e)
         {
             parser.Setting = new BankSetting();
+            TimerUpdata.Enabled = true;
             parser.Start();
+
         }
 
         private void ButtonAbort_Click(object sender, EventArgs e)
         {
             parser.Abort();
+            TimerUpdata.Enabled = false;
+        }
+
+        private void TimerUpdata_Tick(object sender, EventArgs e)
+        {
+            parser.Start();
         }
     }
 }

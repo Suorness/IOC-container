@@ -7,20 +7,47 @@ using System.Linq;
 
 namespace ParserLib.siteBank
 {
-    public class BankParser : IParser<string[]>
+    public class BankParser : IParser<ExchangeRates[]>
     {
-        public string[] Parse(IHtmlDocument document)
+        public ExchangeRates[] Parse(IHtmlDocument document)
         {
-            var list = new List<string>();
-            var items = document.QuerySelectorAll("p").Where(item => item.ClassName != null && item.ClassName.Contains("text-center h2"));
+            var list = new List<ExchangeRates>();
+            var values = document.QuerySelectorAll("p").Where
+                    (item => item.ClassName != null && item.ClassName.Contains("text-center h2"));
+            var names = document.QuerySelectorAll("h2").Where
+                    (item => item.ClassName != null && item.ClassName.Contains("text-center"));
 
-            foreach (var item in items)
+            int count = names.Count();
+            var aNames=names.ToArray();
+            var aValues = values.ToArray();
+            for (int i=0; i < count; i++)
             {
-                list.Add(item.TextContent);
+                list.Add(new ExchangeRates(aValues[i].TextContent, aNames[i].TextContent));
             }
-
             return list.ToArray();
-
         }
+        //public string[] Parse(IHtmlDocument document)
+        //{
+        //    var list = new List<string>();
+
+        //    var items = document.QuerySelectorAll("p").Where
+        //        (item => item.ClassName != null && item.ClassName.Contains("text-center h2"));
+
+            
+        //    foreach (var item in items)
+        //    {
+        //        list.Add(item.TextContent);
+        //    }
+        //    var itemsI = document.QuerySelectorAll("h2").Where
+        //        (item => item.ClassName != null && item.ClassName.Contains("text-center"));
+
+        //    foreach (var item in itemsI)
+        //    {
+        //        list.Add(item.TextContent);
+        //    }
+
+        //    return list.ToArray();
+
+        //}
     }
 }

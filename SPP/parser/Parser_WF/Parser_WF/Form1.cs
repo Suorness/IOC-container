@@ -15,17 +15,18 @@ namespace Parser_WF
 {
     public partial class Form1 : Form
     {
-        ParserWorker<string[]> parser;
+        ParserWorker<ExchangeRates[]> parser;
         
         public Form1()
         {
             InitializeComponent();
-            parser = new ParserWorker<string[]>(new BankParser());
+            //parser = new ParserWorker<string[]>(new BankParser());
+            parser = new ParserWorker<ExchangeRates[]>( new BankParser());
             parser.OnComplite += Parser_OnComplite;
             parser.OnNewData += Parser_OnNewData;
         }
 
-        private void Parser_OnNewData(object arg1, string[] arg2)
+        private void Parser_OnNewData(object arg1, ExchangeRates[] arg2)
         {
             ListData.Items.AddRange(arg2);
         }

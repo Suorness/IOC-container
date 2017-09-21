@@ -9,7 +9,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
 <script>
     function find() {
-        $.getJSON( 'http://localhost:58591/' + 'api/Rate')
+        $.getJSON('http://localhost:58591/' + 'noSerialible')
             .done(function (data) {
                 console.log(data);
                 $('#сourse').html(formatItem(data));

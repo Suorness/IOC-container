@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserLib", "ClassLibrary1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webService", "webService\webService.csproj", "{C6C7358D-2961-4518-A7E6-86DE6A601547}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser_API_WF_", "Parser_API_WF_\Parser_API_WF_.csproj", "{3A4B627C-C0D1-437C-8437-D4546FECEEA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C6C7358D-2961-4518-A7E6-86DE6A601547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6C7358D-2961-4518-A7E6-86DE6A601547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6C7358D-2961-4518-A7E6-86DE6A601547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A4B627C-C0D1-437C-8437-D4546FECEEA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4B627C-C0D1-437C-8437-D4546FECEEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4B627C-C0D1-437C-8437-D4546FECEEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4B627C-C0D1-437C-8437-D4546FECEEA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

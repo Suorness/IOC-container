@@ -1,24 +1,26 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ParserLib.siteBank
 {
-   //[Serializable]
-   public class ExchangeRates
+    [Serializable]
+    public class ExchangeRateSerialible
     {
         //[JsonProperty("CurrencyName")]
         public string CurrencyName { get; set; }
         //[JsonProperty("CurrencyValue")]
         public string CurrencyValue { get; set; }
 
-        public ExchangeRates(string value,string name)
+        public ExchangeRateSerialible(string value, string name)
         {
             CurrencyName = name;
             CurrencyValue = value;
         }
-        public ExchangeRates()
+        public ExchangeRateSerialible()
         {
 
         }
@@ -28,4 +30,5 @@ namespace ParserLib.siteBank
 
         }
     }
+
 }

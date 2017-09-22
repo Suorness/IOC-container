@@ -76,7 +76,6 @@
             // TimerUpdata
             // 
             this.TimerUpdata.Enabled = true;
-            this.TimerUpdata.Interval = 10000;
             this.TimerUpdata.Tick += new System.EventHandler(this.TimerUpdata_Tick);
             // 
             // Form1
